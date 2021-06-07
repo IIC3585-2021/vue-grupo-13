@@ -6,7 +6,7 @@
       <h3>{{ asset.id }}</h3>
     </div>
     <div>
-      <Button text= "Detalles" color="green" />
+      <Button @click="details(asset.id)" text= "Detalles" color="#12161C" />
     </div>
   </div>
 </template>
@@ -22,6 +22,11 @@ export default {
   components: {
     Button,
   },
+  methods: {
+    details(assetId) {
+      this.$router.push(assetId);
+    },
+  },
 };
 </script>
 
@@ -32,16 +37,17 @@ export default {
 }
 
 .asset {
+  border-radius: 4px;
   display: flex;
   flex-direction: row;
-  background: #f4f4f4;
+  background: #e2e1e1;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
 .asset.active {
-  border-left: 5px solid green;
+  border-left: 5px solid #F0B90B;
 }
 
 .task h3 {

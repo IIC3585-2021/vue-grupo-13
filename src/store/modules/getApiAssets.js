@@ -19,7 +19,6 @@ const actions = {
       url: '/asset',
       validateStatus: (status) => status >= 200 && status < 400,
     });
-    console.log(response);
     commit('setApiAssets', response.data.content);
   },
 };

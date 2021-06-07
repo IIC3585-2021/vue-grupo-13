@@ -1,10 +1,11 @@
 import { createStore } from 'vuex';
-import apiCredentials from './modules/apiCredentials';
-import assets from './modules/assets';
+import apiCredentials from './modules/getApiCredentials';
+import assets from './modules/getApiAssets';
+import asset from './modules/getApiAssetDetails';
 
 export default createStore({
   state: {},
   mutations: {},
   actions: {},
-  modules: { apiCredentials, assets },
+  modules: { apiCredentials, assets, asset },
 });

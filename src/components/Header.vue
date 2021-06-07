@@ -1,8 +1,7 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button text= "Buscar por id..." color="green" />
-    <!-- <Button text="eliminar" color="red" /> -->
+    <Button text= "Buscar por id" color="#12161C" />
   </header>
 </template>
 

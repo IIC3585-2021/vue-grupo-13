@@ -1,30 +1,22 @@
 <template>
   <div class="container">
-    <Header title="Criptomonedas disponibles"/>
-    <Assets />
+    <Navbar />
+    <router-view />
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import Header from './components/Header.vue';
-import Assets from './components/Assets.vue';
+import { mapActions } from 'vuex';
+import Navbar from './components/Nabvar.vue';
 
 export default {
   name: 'app',
   components: {
-    Assets,
-    Header,
+    Navbar,
   },
-  computed: mapGetters(['getToken']),
   methods: {
     ...mapActions(['getApiToken']),
   },
-  // data() {
-  //   return {
-  //     tasks: [],
-  //   };
-  // },
   created() {
     this.getApiToken();
   },
@@ -40,17 +32,16 @@ export default {
 body {
   font-family: "Poppins", sans-serif;
 }
+
 .container {
   margin: auto;
   overflow: auto;
-  min-height: 300px;
-  padding: 30px;
-  border-radius: 5px;
 }
+
 .btn {
   display: inline-block;
   background-color: #000;
-  color: #fff;
+  color: #F0B90B;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -59,12 +50,15 @@ body {
   text-decoration: none;
   font-size: 15px;
 }
+
 .btn:focus {
   outline: none;
 }
+
 .btn:active {
   transform: scale(0.98);
 }
+
 .btn-block {
   display: block;
   width: 100%;
