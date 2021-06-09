@@ -27,7 +27,7 @@ export default {
     flex-direction: row;
     height: 75px;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
