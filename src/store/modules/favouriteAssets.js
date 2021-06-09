@@ -18,7 +18,8 @@ const actions = {
 };
 
 const mutations = {
-  addToFavourites: (state, asset) => state.favourites = [...state.favourites, asset],
+  addToFavourites: (state, asset) => state.favourites = [...state.favourites,
+    asset],
   deleteFromFavourites: (state, asset) => state.favourites = state.favourites
     .filter((favouritesAsset) => favouritesAsset.id !== asset.id),
 };

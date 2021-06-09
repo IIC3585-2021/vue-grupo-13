@@ -7,7 +7,8 @@
     </div>
     <div class="ButtonsDiv">
       <Button @click="details(asset.id)" text= "Detalles" />
-      <Button v-if="favouritesId.includes(asset.id)" @click="deleteFromFavourites(asset)"
+      <Button v-if="favouritesId.includes(asset.id)"
+        @click="deleteFromFavourites(asset)"
         text= "Eliminar"/>
       <Button v-else @click="saveToFavourites(asset)"
         text= "Guardar"/>

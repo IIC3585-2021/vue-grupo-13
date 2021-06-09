@@ -1,7 +1,6 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <input placeholder="Buscar criptomoneda..." />
   </header>
 </template>
 

@@ -15,10 +15,9 @@ export default {
   },
   computed: mapGetters(['getAssetMarketInfo', 'getAssetBasicInfo']),
   methods: {
-    ...mapActions(['getApiAssetMarketInfo', 'getApiAssetBasicInfo', 'getApiToken']),
+    ...mapActions(['getApiAssetMarketInfo', 'getApiAssetBasicInfo']),
   },
   async created() {
-    // await this.getApiToken();
     this.getApiAssetMarketInfo(this.$route.params.id);
     this.getApiAssetBasicInfo(this.$route.params.id);
   },
