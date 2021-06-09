@@ -22,5 +22,6 @@ export default {
 <style scoped>
   .Container {
     padding: 30px;
+    padding-top: 110px;
   }
 </style>

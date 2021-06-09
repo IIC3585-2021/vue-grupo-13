@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="AssetDetail">
     <AssetDetail :marketInfo="getAssetMarketInfo" :basicInfo="getAssetBasicInfo"/>
   </div>
 </template>
@@ -23,3 +23,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .AssetDetail {
+    padding-top: 110px;
+  }
+</style>
