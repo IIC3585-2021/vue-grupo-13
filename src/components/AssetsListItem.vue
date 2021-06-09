@@ -5,13 +5,18 @@
       <h3>{{ asset.symbol }}</h3>
       <h3>{{ asset.id }}</h3>
     </div>
-    <div>
-      <Button @click="details(asset.id)" text= "Detalles" color="#12161C" />
+    <div class="ButtonsDiv">
+      <Button @click="details(asset.id)" text= "Detalles" />
+      <Button v-if="favouritesId.includes(asset.id)" @click="deleteFromFavourites(asset)"
+        text= "Eliminar"/>
+      <Button v-else @click="saveToFavourites(asset)"
+        text= "Guardar"/>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 import Button from './Button.vue';
 
 export default {
@@ -22,9 +27,22 @@ export default {
   components: {
     Button,
   },
+  computed: {
+    ...mapGetters(['getFavourites']),
+    favouritesId() {
+      return this.getFavourites.map((asset) => asset.id);
+    },
+  },
   methods: {
+    ...mapActions(['pushToFavourites', 'popFromFavourites']),
     details(assetId) {
       this.$router.push(assetId);
+    },
+    saveToFavourites(asset) {
+      this.pushToFavourites(asset);
+    },
+    deleteFromFavourites(asset) {
+      this.popFromFavourites(asset);
     },
   },
 };
@@ -36,6 +54,10 @@ export default {
   width: 100%;
 }
 
+.ButtonsDiv {
+  flex-direction: row;
+}
+
 .asset {
   border-radius: 4px;
   display: flex;
@@ -43,16 +65,10 @@ export default {
   background: #e2e1e1;
   margin: 5px;
   padding: 10px 20px;
-  cursor: pointer;
 }
 
 .asset.active {
   border-left: 5px solid #F0B90B;
 }
 
-.task h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 </style>

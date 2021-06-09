@@ -39,7 +39,7 @@ body {
 }
 
 .btn {
-  display: inline-block;
+  float: right;
   background-color: #000;
   color: #F0B90B;
   border: none;

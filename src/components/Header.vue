@@ -1,12 +1,11 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button text= "Buscar por id" color="#12161C" />
+    <input placeholder="Buscar criptomoneda..." />
   </header>
 </template>
 
 <script>
-import Button from './Button.vue';
 
 export default {
   name: 'Header',
@@ -16,13 +15,17 @@ export default {
       default: 'default title',
     },
   },
-  components: {
-    Button,
-  },
 };
 </script>
 
 <style scoped>
+
+input {
+  height: 20px;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border-color: #12161C;
+}
 header {
   display: flex;
   justify-content: space-between;

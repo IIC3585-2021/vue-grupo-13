@@ -1,6 +1,7 @@
 <template>
   <div  class="Navbar">
-    <h1 @click="handleNavbarClick"> CriptoBase </h1>
+    <h1 @click="handleHomeClick"> CriptoBase </h1>
+    <h2 @click="handleSavedAssetsClick"> Favoritos </h2>
   </div>
 </template>
 
@@ -8,8 +9,11 @@
 export default {
   name: 'navbar',
   methods: {
-    handleNavbarClick() {
+    handleHomeClick() {
       this.$router.push('/');
+    },
+    handleSavedAssetsClick() {
+      this.$router.push('/favourites');
     },
   },
 };
@@ -31,6 +35,14 @@ export default {
   }
 
   h1 {
+    margin-top: 0.6rem;
+    cursor:pointer;
+    color: #F0B90B;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    margin-right: 2rem;
     cursor:pointer;
     color: #F0B90B;
   }

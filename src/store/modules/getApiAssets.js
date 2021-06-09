@@ -19,7 +19,7 @@ const actions = {
       url: '/asset',
       validateStatus: (status) => status >= 200 && status < 400,
     });
-    commit('setApiAssets', response.data.content);
+    commit('setApiAssets', response.data.content.slice(0, 100));
   },
 };
 

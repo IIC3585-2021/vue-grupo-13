@@ -18,7 +18,7 @@ export default {
     ...mapActions(['getApiAssetMarketInfo', 'getApiAssetBasicInfo', 'getApiToken']),
   },
   async created() {
-    await this.getApiToken();
+    // await this.getApiToken();
     this.getApiAssetMarketInfo(this.$route.params.id);
     this.getApiAssetBasicInfo(this.$route.params.id);
   },

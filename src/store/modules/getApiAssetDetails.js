@@ -24,7 +24,6 @@ const actions = {
       url: '/market-cap',
       validateStatus: (status) => status >= 200 && status < 400,
     });
-    console.log(response.data.content);
     commit('setApiMarketAssetInfo', response.data.content);
   },
   getApiAssetBasicInfo: async ({ commit }, id) => {
